@@ -42,7 +42,7 @@ let methods = {
 
             oImg.clone()
                 .cover(+size[0], +size[1])
-                .quality(90)
+                .quality(80)
                 .write(`${output}/${outFile}`, () => {
                     console.info(`${outFile}  -- done`.green);
                     this.loopCrop(oImg, fMap);

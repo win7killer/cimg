@@ -23,7 +23,7 @@ const CONF = {
         [750, 960],
         [750, 790]
     ],
-    output: '../output'
+    output: './output'
 };
 
 module.exports = CONF;
