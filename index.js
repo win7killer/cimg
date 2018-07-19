@@ -8,6 +8,7 @@ let fs = require('fs');
 let Jimp = require('jimp');
 let colors = require('colors');
 const CONF = require('./conf');
+require('shelljs/global');
 
 let output = CONF.output || './output';
 let numList = CONF.numList || [];
@@ -59,7 +60,8 @@ let methods = {
 
     init() {
         if (!args[0] || /^\d+$/.test(args[0])) {
-            throw new Error('请指定要处理的图片，如“node run.js 1.jpg”'.red);
+            echo('请指定要处理的图片，如“node run.js 1.jpg”'.bgRed);
+            exit(1);
         }
         // 文件处理
         if (/^https?\:/.test(args[0])) { // url
@@ -67,7 +69,8 @@ let methods = {
         } else {
             this.sFile = './img/' + (args[0] || '1.jpg');
             if (!fs.existsSync(this.sFile)) {
-                throw new Error('文件不存在'.red);
+                echo('文件不存在'.bgMagenta);
+                exit(1);
             }
         }
         // 剪裁list处理
@@ -84,7 +87,7 @@ let methods = {
 };
 
 module.exports = {
-    init: function() {
+    init: function () {
         methods.init();
     }
 }

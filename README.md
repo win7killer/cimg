@@ -18,7 +18,10 @@ npm (nodejs中自带)
 3.  分两种使用方法
 
 ### 如果要使用cli，可以先
-`sudo npm link` 把本项目添加全局软连，然后
+`npm link` 把本项目添加全局软连
+
+然后
+
 `cimg 1.jpg`
 或者
 `cimg 1.jpg 100 100` // 两个数字为[宽 高]
@@ -27,3 +30,10 @@ npm (nodejs中自带)
 `node run.js 1.jpg`
 或者
 `node run.js 1.jpg 100 100`
+
+### Dependencies
+- colors: https://github.com/Marak/colors.js,
+- jimp: https://github.com/oliver-moran/jimp ,
+- shelljs: https://github.com/shelljs/shelljs,
+- yargs: https://github.com/yargs/yargs
+

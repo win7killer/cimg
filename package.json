@@ -1,19 +1,22 @@
 {
   "name": "cimg",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "run.js",
   "bin": {
-    "cimg": "./bin/cmd.js"
+    "cimg": "bin/cimg"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cimg": "node run.js"
   },
   "git repository": "://github.com/win7killer/cimg",
   "author": "win7killer@163.com",
   "license": "ISC",
   "dependencies": {
     "colors": "^1.1.2",
-    "jimp": "^0.2.28"
+    "jimp": "^0.2.28",
+    "shelljs": "^0.8.2",
+    "yargs": "10.0.3"
   }
 }
