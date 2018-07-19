@@ -5,12 +5,15 @@
 
 let args = process.argv.splice(2);
 let fs = require('fs');
+let path = require('path');
 let Jimp = require('jimp');
 let colors = require('colors');
 const CONF = require('./conf');
 require('shelljs/global');
 
-let output = CONF.output || './output';
+const comandDir = process.cwd();
+
+let output = path.resolve(comandDir, 'output');
 let numList = CONF.numList || [];
 
 let methods = {
@@ -60,17 +63,19 @@ let methods = {
 
     init() {
         if (!args[0] || /^\d+$/.test(args[0])) {
-            echo('请指定要处理的图片，如“node run.js 1.jpg”'.bgRed);
+            echo('请指定要处理的图片，如“cimg 1.jpg”\n'.bgRed);
             exit(1);
         }
         // 文件处理
         if (/^https?\:/.test(args[0])) { // url
             this.sFile = args[0];
         } else {
-            this.sFile = './img/' + (args[0] || '1.jpg');
+            this.sFile = path.resolve(comandDir, args[0]);
             if (!fs.existsSync(this.sFile)) {
-                echo('文件不存在'.bgMagenta);
+                echo(`文件 ${this.sFile} 不存在\n`.bgRed);
                 exit(1);
+            } else {
+                echo(`处理图片···\n${this.sFile}`.bgMagenta);
             }
         }
         // 剪裁list处理

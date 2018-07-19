@@ -1,7 +1,7 @@
 {
   "name": "cimg",
-  "version": "0.0.4",
-  "description": "",
+  "version": "0.0.5",
+  "description": "### 先缩放，后剪切，图像质量80%",
   "main": "run.js",
   "bin": {
     "cimg": "bin/cimg"
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cimg": "node run.js"
   },
-  "git repository": "://github.com/win7killer/cimg",
+  "git repository": "https://github.com/win7killer/cimg",
   "author": "win7killer@163.com",
   "license": "ISC",
   "dependencies": {
@@ -18,5 +18,19 @@
     "jimp": "^0.2.28",
     "shelljs": "^0.8.2",
     "yargs": "10.0.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/win7killer/cimg.git"
+  },
+  "keywords": [
+    "cimg",
+    "img",
+    "cutimg"
+  ],
+  "bugs": {
+    "url": "https://github.com/win7killer/cimg/issues"
+  },
+  "homepage": "https://github.com/win7killer/cimg#readme"
 }
